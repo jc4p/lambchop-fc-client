@@ -1,0 +1,28 @@
+//
+//  Config.swift
+//  LambchopCast
+//
+//  Created by Kasra Rahjerdi on 4/10/25.
+//
+
+import Foundation
+
+struct Config {
+    // Retrieves the API key from the Info.plist, which gets it from the xcconfig file
+    // Falls back to environment variable, then to a demo key if neither is available
+    static let apiKey: String = {
+        // First priority: Check Info.plist (populated from xcconfig)
+        if let apiKey = Bundle.main.object(forInfoDictionaryKey: "NEYNAR_API_KEY") as? String, 
+           !apiKey.isEmpty && apiKey != "$(NEYNAR_API_KEY)" {
+            return apiKey
+        }
+        
+        // Second priority: Check environment variables (useful for development)
+        if let envKey = ProcessInfo.processInfo.environment["NEYNAR_API_KEY"], !envKey.isEmpty {
+            return envKey
+        }
+        
+	// Final fallback
+        return "YOUR_NEYNAR_API_KEY"
+    }()
+}

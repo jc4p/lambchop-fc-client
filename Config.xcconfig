@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  LambchopCast
+//
+//  Created by Kasra Rahjerdi on 4/10/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+NEYNAR_API_KEY=YOUR_NEYNAR_API_KEY

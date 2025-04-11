@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CA1E1A572DA8A0C300D8F27E /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = CA1E1A562DA8A0C300D8F27E /* Config.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CA1E1A3D2DA89E6100D8F27E /* LambchopCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambchopCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1E1A562DA8A0C300D8F27E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		CA1E1A342DA89E6100D8F27E = {
 			isa = PBXGroup;
 			children = (
+				CA1E1A562DA8A0C300D8F27E /* Config.xcconfig */,
 				CA1E1A3F2DA89E6100D8F27E /* LambchopCast */,
 				CA1E1A3E2DA89E6100D8F27E /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1E1A572DA8A0C300D8F27E /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

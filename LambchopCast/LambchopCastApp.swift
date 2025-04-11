@@ -10,9 +10,17 @@ import SwiftData
 
 @main
 struct LambchopCastApp: App {
+    @State private var showLaunchScreen = true
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Cast.self,
+            Profile.self,
+            Embed.self,
+            Channel.self,
+            Reaction.self,
+            Reply.self,
+            EmbeddedCast.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +33,23 @@ struct LambchopCastApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                ContentView()
+                    .modelContainer(sharedModelContainer)
+                
+                if showLaunchScreen {
+                    LaunchScreen()
+                        .transition(.opacity)
+                        .zIndex(1)
+                }
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation(.easeOut(duration: 0.5)) {
+                        showLaunchScreen = false
+                    }
+                }
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
